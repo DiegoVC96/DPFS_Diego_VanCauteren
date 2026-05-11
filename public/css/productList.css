@@ -100,6 +100,45 @@
     background: rgba(255, 77, 77, 0.05);
 }
 
+.btn-add-cart {
+    background: var(--neon-blue);
+    color: #000;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-family: var(--font-tech);
+    font-size: 0.7rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-add-cart:hover {
+    background: white;
+    box-shadow: 0 0 10px var(--neon-blue);
+    transform: scale(1.05);
+}
+
+.btn-add-cart i {
+    font-size: 0.9rem;
+}
+
+.no-results-container {
+    text-align: center;
+    padding: 100px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px dashed var(--border-color);
+}
+
+.no-results-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
 @media (max-width: 768px) {
     .admin-table th:nth-child(3), 
     .admin-table td:nth-child(3) { display: none; }

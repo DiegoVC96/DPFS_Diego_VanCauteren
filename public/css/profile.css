@@ -1,0 +1,6 @@
+.profile-grid { display: flex; gap: 50px; margin-top: 30px; }
+.avatar-section { flex: 1; text-align: center; }
+.avatar-wrapper { width: 250px; height: 250px; border-radius: 50%; overflow: hidden; margin: 0 auto 20px; }
+.avatar-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+.data-section { flex: 2; }
+.btn-secondary { cursor: pointer; color: var(--neon-blue); border: 1px solid var(--neon-blue); padding: 8px 20px; border-radius: 5px; }

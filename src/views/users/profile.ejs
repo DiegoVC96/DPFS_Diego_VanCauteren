@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/header') %>
+<link rel="stylesheet" href="/css/profile.css">
+
+<body>
+    <main class="container profile-container animate-fade">
+        <header class="profile-header">
+            <h1 class="font-tech">MI <span class="neon-text">PERFIL</span></h1>
+            <p>Gestioná tus datos de acceso y apariencia</p>
+        </header>
+
+        <form action="/users/profile/update?_method=PUT" method="POST" enctype="multipart/form-data" class="profile-form">
+            <div class="profile-grid">
+                <div class="avatar-section">
+                    <div class="avatar-wrapper neon-border">
+                        <img src="/images/users/<%= user.image %>" alt="Avatar" id="avatarPreview">
+                    </div>
+                    <label for="image" class="btn-secondary">CAMBIAR FOTO</label>
+                    <input type="file" name="image" id="image" accept="image/*" hidden>
+                    <p class="file-info">Formatos: JPG, PNG, GIF</p>
+                </div>
+
+                <div class="data-section">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="font-tech">NOMBRE</label>
+                            <input type="text" name="firstName" value="<%= locals.user ? user.firstName : '' %>" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="font-tech">APELLIDO</label>
+                            <input type="text" name="lastName" value="<%= locals.user ? user.lastName : '' %>" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="font-tech">EMAIL</label>
+                        <input type="email" name="email" value="<%= user.email %>" required>
+                    </div>
+
+                    <div class="admin-actions">
+                        <button type="submit" class="btn-primary btn-glow font-tech">GUARDAR CAMBIOS</button>
+                        <a href="/" class="btn-cancel">CANCELAR</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <script>
+        document.getElementById('image').onchange = function (evt) {
+            const [file] = this.files;
+            if (file) {
+                document.getElementById('avatarPreview').src = URL.createObjectURL(file);
+            }
+        }
+    </script>
+    <%- include('../partials/footer') %>
+</body>
+</html>

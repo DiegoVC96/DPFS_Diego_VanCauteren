@@ -229,6 +229,25 @@
     font-size: 1rem;
 }
 
+.btn-continue-shopping {
+    background: transparent;
+    color: var(--neon-blue);
+    border: 2px solid var(--neon-blue);
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+}
+
+.btn-continue-shopping:hover {
+    background: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    transform: translateX(-5px);
+}
+
 .btn-add-mini {
     background: transparent;
     border: 1px solid var(--neon-blue);

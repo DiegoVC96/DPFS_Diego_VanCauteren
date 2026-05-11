@@ -5,53 +5,76 @@
 
 <body>
     <main class="container admin-list-container animate-fade">
-        <header class="list-header">
-            <h1 class="font-tech">GESTIÓN DE <span class="neon-text">INVENTARIO</span></h1>
-            <a href="/products/create" class="btn-primary btn-add-new">+ NUEVO PRODUCTO</a>
-        </header>
+            <header class="list-header">
+            <% if (locals.keywords) { %>
+                <h1 class="font-tech">RESULTADOS PARA: <span class="neon-text">"<%= keywords %>"</span></h1>
+            <% } else { %>
+                <h1 class="font-tech">GESTIÓN DE <span class="neon-text">INVENTARIO</span></h1>
+            <% } %>
+            <% if (locals.user && user.category_id == 1) { %>
+                <a href="/products/create" class="btn-primary btn-add-new">+ NUEVO PRODUCTO</a>
+            <% } %>
+            </header>
 
         <div class="table-wrapper">
+            <% if (products.length > 0) { %>
             <table class="admin-table">
                 <thead>
-                    <tr class="font-tech">
-                        <th>IMAGEN</th>
-                        <th>NOMBRE</th>
-                        <th>CATEGORÍA</th>
-                        <th>PRECIO</th>
-                        <th>ACCIONES</th>
-                    </tr>
+                <tr class="font-tech">
+                    <th>IMAGEN</th>
+                    <th>NOMBRE</th>
+                    <th>CATEGORÍA</th>
+                    <th>PRECIO</th>
+                    <th>ACCIONES</th>
+                </tr>
                 </thead>
                 <tbody>
-                    <!-- Ejemplo de fila de producto -->
-                     <% products.forEach(product => { %>
+                    <% products.forEach(product => { %>
                     <tr>
                         <td>
-                            <img src="/images/products/RTX1.png" alt="RTX 4080" class="table-img">
+                        <img src="/images/products/<%= product.image %>" alt="<%= product.name %>" class="table-img">
                         </td>
                         <td class="product-name-cell">
-                            <strong>GIGABYTE RTX 4080 SUPER</strong>
-                            <span>SKU: NH-GPU-4080S</span>
+                        <strong><%= product.name %></strong>
+                        <span>ID: #<%= product.id %></span>
                         </td>
-                        <td><span class="badge">PLACA DE VIDEO</span></td>
-                        <td class="price-cell">$1.340.000</td>
+                        <td>
+                        <span class="badge"><%= product.category ? product.category.name : 'S/C' %></span>
+                        </td>
+                        <td class="price-cell">$<%= product.price.toLocaleString('es-AR') %></td>
                         <td class="actions-cell">
-                            <a href="/products/edit/1" class="btn-edit" title="Editar">
-                                <svg xmlns="http://w3.org" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                            <% if (locals.user && user.category_id == 1) { %>
+                            <!-- ADMIN: EDITAR Y BORRAR -->
+                            <a href="/products/<%= product.id %>/edit" class="btn-edit" title="Editar">
+                                <i class="fa-solid fa-pen-to-square"></i>
                             </a>
-                            <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
-                                <button type="submit" class="btn-delete">Eliminar</button>
-                                    <svg xmlns="http://w3.org" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+        
+                            <form action="/products/<%= product.id %>?_method=DELETE" method="POST" style="display: inline;">
+                                <button type="submit" class="btn-delete" title="Eliminar" onclick="return confirm('¿Eliminar producto?')">
+                                    <i class="fa-solid fa-trash"></i>
                                 </button>
                             </form>
+
+                            <% } else { %>
+                            <!-- USUARIO/VISITANTE: AÑADIR AL CARRITO -->
+                            <form action="/products/cart/add/<%= product.id %>" method="POST">
+                                <button type="submit" class="btn-add-cart" title="Añadir al carrito">
+                                    <i class="fa-solid fa-cart-plus"></i> AGREGAR
+                                </button>
+                            </form>
+                            <% } %>
                         </td>
                     </tr>
                     <% }) %>
-                    <!-- Fin de ejemplo -->
                 </tbody>
             </table>
-        </div>
-    </main>
-
-    <%- include('../partials/footer') %>
-</body>
-</html>
+                <% } else { %>
+                <!-- SI NO HAY RESULTADOS -->
+                <div class="no-results-container animate-fade">
+                <div class="no-results-icon">🔍</div>
+                <h2 class="font-tech">NO SE ENCONTRARON PRODUCTOS</h2>
+                <p>No hay coincidencias para tu búsqueda. ¡Intenta con otras palabras!</p>
+                <a href="/products" class="btn-primary" style="margin-top: 20px;">VER TODO EL CATÁLOGO</a>
+                </div>
+                <% } %>
+                </div>

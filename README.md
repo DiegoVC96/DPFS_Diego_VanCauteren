@@ -136,3 +136,28 @@ Progreso de la migración de maquetas estáticas a un entorno funcional con **No
 - ✅ **Finalizado:** Funcionalidad implementada y testeada.
 - 🏗️ **En curso:** Tarea en proceso de desarrollo activo.
 - 📅 **Pendiente:** Tareas planificadas para el próximo Sprint.
+
+---
+
+## 📋 Tablero de Trabajo (Sprint Backlog) - Fase 5: Persistencia con Sequelize
+
+¡Hito técnico alcanzado! La aplicación ahora opera sobre una base de datos relacional robusta.
+
+| Tarea | Estado | Responsable | Prioridad |
+| :--- | :---: | :---: | :---: |
+| Diseño del Diagrama Entidad-Relación (DER) | ✅ Finalizado | Data Architect | Alta
+| Script SQL de creación de tablas y relaciones | ✅ Finalizado | Backend | Alta
+| Script de población de datos (Seeds)|	✅ Finalizado | Backend | Media
+| Configuración de Sequelize y archivos de conexión | ✅ Finalizado | Backend | Alta
+| Definición de Modelos (User, Product, Brand, etc.) | ✅ Finalizado | Backend | Alta
+| Configuración de asociaciones entre modelos |	✅ Finalizado | Backend | Alta
+| Refactorización del CRUD de Productos a Sequelize| ✅ Finalizado |	Full Stack | Alta
+| Refactorización del CRUD de Usuarios a Sequelize | ✅ Finalizado |	Full Stack | Alta
+| Implementación de buscador con operadores de SQL | ✅ Finalizado |	Backend | Media
+| Validaciones con Express Validator | 🏗️ En curso |	Backend | Alta
+| Desarrollo de APIs (JSON) para productos y usuarios |	📅 Pendiente | Full Stack |	Alta
+
+**Leyenda:**
+✅ **Finalizado:** Funcionalidad integrada en base de datos.
+🏗️ **En curso:** Tarea en proceso de desarrollo activo.
+📅 **Pendiente:** Planificado para el cierre del Sprint.

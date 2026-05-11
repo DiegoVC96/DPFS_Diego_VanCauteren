@@ -2,27 +2,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NeoHorizon Tech | Elite Hardware</title>
-    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header.css">
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="header-main">
-        <nav class="container">
-            <div class="logo font-tech neon-text"><img src="/images/LOGO NeoHorizon.png"></div>
-            <div class="search-container">
-                <input type="text" placeholder="Buscar hardware..." class="search-bar">
+    <header class="main-header">
+        <div class="container header-flex-container">
+
+            <div class="logo-box">
+                <a href="/">
+                    <img src="/images/LOGO NeoHorizon.png" alt="NeoHorizon Logo" class="logo-img">
+                    <span class="logo-text font-tech neon-text">NEOHORIZON</span>
+                </a>
             </div>
-            <div class="nav-actions">
-            <% if (locals.user) { %>
-                <span class="neon-text">Hola, <%= user.firstName %></span>
-                <img src="/images/users/<%= user.image %>" width="30" style="border-radius: 50%">
-                <a href="/users/logout" class="nav-link">Cerrar Sesión</a>
-            <% } else { %>
-                <a href="/users/login" class="nav-link">Login</a>
-                <a href="/users/register" class="nav-link">Registro</a>
-            <% } %>
+            <div class="search-box">
+                <form action="/products/search" method="GET" class="search-form">
+                    <input type="text" name="keywords" placeholder="Buscar hardware..." required>
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
             </div>
-        </nav>
+
+            <nav class="nav-actions">
+                <% if (locals.user) { %>
+                    <div class="user-info-group">
+                        <span class="user-welcome font-tech">
+                            HOLA, <span class="neon-text">
+                            <%= locals.user ? (user.firstName + ' ' + user.lastName).toUpperCase() : 'USUARIO' %>
+                                </span>
+                        </span>
+                    
+                        <a href="/products/cart" class="nav-icon" title="Ver Carrito">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+
+                        <a href="/users/profile" class="nav-link">MI PERFIL</a>
+                        <a href="/users/logout" class="btn-logout font-tech">LOGOUT</a>
+                    </div>
+                <% } else { %>
+                    <div class="auth-buttons">
+                        <a href="/users/login" class="nav-link">INGRESAR</a>
+                        <a href="/users/register" class="btn-primary-small font-tech">REGISTRARSE</a>
+                    </div>
+                <% } %>
+            </nav>
+        </div>
     </header>

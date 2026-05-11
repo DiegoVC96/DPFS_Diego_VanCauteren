@@ -1,20 +1,29 @@
-const fs = require('fs');
-const path = require('path');
+const db = require('../database/models');
 
 function userRecordameMiddleware(req, res, next) {
-    // Si no hay nadie en sesión pero existe la cookie
-    if (!req.session.userLogged && req.cookies.userEmail) {
-        const usersFilePath = path.join(__dirname, '../data/users.json');
-        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-        
-        const userFromCookie = users.find(user => user.email === req.cookies.userEmail);
-
-        if (userFromCookie) {
-            delete userFromCookie.password;
-            req.session.userLogged = userFromCookie;
-        }
+    if (req.session && req.session.userLogged) {
+        return next();
     }
-    next();
+
+    if (req.cookies && req.cookies.userEmail) {
+        db.User.findOne({
+            where: { email: req.cookies.userEmail }
+        })
+        .then(userFromCookie => {
+            if (userFromCookie) {
+                const userToLog = userFromCookie.get({ plain: true });
+                delete userToLog.password;
+                req.session.userLogged = userToLog;
+            }
+            return next();
+        })
+        .catch(error => {
+            console.log("Error en recordame:", error);
+            return next();
+        });
+    } else {
+        return next();
+    }
 }
 
 module.exports = userRecordameMiddleware;
