@@ -60,3 +60,28 @@ Leyenda:
 ✅ Finalizado: Tarea completada y validada.
 🏗️ En curso: Tarea en proceso de desarrollo técnico.
 📅 Pendiente: Tarea planificada para el próximo Sprint.
+
+---
+
+## 📋 Tablero de Trabajo (Sprint Backlog) - Fase de Dinamismo
+
+Progreso de la migración de maquetas estáticas a un entorno funcional con **Node.js** y motor de plantillas **EJS**.
+
+
+| Tarea | Estado | Responsable | Prioridad |
+| :--- | :---: | :---: | :---: |
+| Implementación de motor EJS y renombre de vistas | ✅ Finalizado | Backend | Alta |
+| Creación de Partials (Header, Footer, Head) | ✅ Finalizado | Frontend | Alta |
+| Refactorización de controladores con método `render()` | ✅ Finalizado | Backend | Alta |
+| Maquetación de Formulario de Creación/Edición | ✅ Finalizado | UI Design | Media |
+| Maquetación de Listado de Productos (Admin) | ✅ Finalizado | Frontend | Media |
+| Configuración de **Multer** para carga de imágenes | 🏗️ En curso | Backend | Alta |
+| Implementación de **Method-Override** (PUT/DELETE) | 🏗️ En curso | Backend | Media |
+| Creación de archivo `products.json` y CRUD básico | 🏗️ En curso | Full Stack | Alta |
+| Validación de formularios (Express Validator) | 📅 Pendiente | Backend | Alta |
+| Lógica de búsqueda y filtrado dinámico | 📅 Pendiente | Full Stack | Media |
+
+**Leyenda:**
+- ✅ **Finalizado:** Tarea completada y validada en el servidor.
+- 🏗️ **En curso:** Tarea en proceso de codificación lógica.
+- 📅 **Pendiente:** Planificado para el cierre del Sprint.

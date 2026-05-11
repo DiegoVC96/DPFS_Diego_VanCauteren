@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('../partials/header') %> <!-- Trae el Header -->
+    <link rel="stylesheet" href="/css/productCart.css">
+
+<body>
+
+    <header class="header-main">
+        <nav class="container">
+            <div class="logo font-tech neon-text"><img src="/images/LOGO NeoHorizon.png"></div>
+            <a href="index.ejs" class="nav-link">Seguir comprando</a>
+        </nav>
+    </header>
+
+    <main class="container cart-wrapper animate-fade">
+        <!-- LISTA DE PRODUCTOS -->
+        <section class="cart-items-section">
+            <h1 class="font-tech section-title">TU CARRITO (2)</h1>
+            
+            <div class="cart-list">
+                <article class="cart-item">
+                    <img src="/images/products/RTX1.png" alt="Producto" class="item-img">
+                    <div class="item-details">
+                        <h3 class="font-tech">GIGABYTE RTX 4080 SUPER</h3>
+                        <p class="item-variant">Gaming OC - 16GB</p>
+                    </div>
+                    <div class="item-qty">
+                        <button class="qty-btn">−</button>
+                        <span>1</span>
+                        <button class="qty-btn">+</button>
+                    </div>
+                    <div class="item-price">$1.340.000</div>
+                    <button class="remove-btn" title="Eliminar">×</button>
+                </article>
+
+                <article class="cart-item">
+                    <img src="/images/products/PROC1.png" alt="CPU" class="item-img">
+                    <div class="item-details">
+                        <h3 class="font-tech">CORE I9 14900K</h3>
+                        <p class="item-variant">Socket LGA1700</p>
+                    </div>
+                    <div class="item-qty">
+                        <button class="qty-btn">−</button>
+                        <span>1</span>
+                        <button class="qty-btn">+</button>
+                    </div>
+                    <div class="item-price">$850.000</div>
+                    <button class="remove-btn" title="Eliminar">×</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- RESUMEN DE COMPRA -->
+        <aside class="cart-summary-section">
+            <div class="summary-card">
+                <h2 class="font-tech">RESUMEN</h2>
+                
+                <div class="summary-line">
+                    <span>Subtotal</span>
+                    <span>$2.190.000</span>
+                </div>
+
+                <div class="shipping-box">
+                    <label class="font-tech">CALCULAR ENVÍO</label>
+                    <div class="cp-input-group">
+                        <input type="text" placeholder="Código Postal" id="cp-input">
+                        <button class="btn-secondary">CALCULAR</button>
+                    </div>
+                    <p class="shipping-cost">Costo de envío: <span class="neon-text">$0</span></p>
+                </div>
+
+                <hr class="divider">
+
+                <div class="summary-line total">
+                    <span class="font-tech">TOTAL</span>
+                    <span class="neon-text">$2.190.000</span>
+                </div>
+
+                <button class="btn-primary btn-full btn-glow">FINALIZAR COMPRA</button>
+                <p class="secure-checkout">🔒 Pago 100% seguro y encriptado</p>
+            </div>
+        </aside>
+
+        <!-- SECCIÓN: PRODUCTOS RECOMENDADOS -->
+        <section class="related-products-section">
+            <h2 class="font-tech section-title">PODRÍA INTERESARTE</h2>
+            <div class="related-grid">
+                <!-- Producto 1 -->
+                <article class="related-card">
+                    <div class="related-img-box">
+                        <img src="/images/products/Product6.png" alt="Fuente">
+                    </div>
+                    <div class="related-info">
+                        <h4 class="font-tech">FUENTE 850W GOLD</h4>
+                     <p class="price-mini">$210.000</p>
+                     <button class="btn-add-mini">AGREGAR</button>
+                     </div>
+                </article>
+
+                <!-- Producto 2 -->
+                <article class="related-card">
+                    <div class="related-img-box">
+                        <img src="/images/products/Product7.png" alt="Monitor">
+                    </div>
+                    <div class="related-info">
+                        <h4 class="font-tech">MONITOR 27" 144HZ</h4>
+                        <p class="price-mini">$450.000</p>
+                        <button class="btn-add-mini">AGREGAR</button>
+                    </div>
+                </article>
+
+                <!-- Producto 3 -->
+                <article class="related-card">
+                    <div class="related-img-box">
+                        <img src="/images/products/Product8.png" alt="Teclado">
+                    </div>
+                    <div class="related-info">
+                        <h4 class="font-tech">TECLADO MECÁNICO RGB</h4>
+                        <p class="price-mini">$95.000</p>
+                        <button class="btn-add-mini">AGREGAR</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <%- include('../partials/footer') %> <!-- Trae el Footer -->
+
+</body>
+</html>
