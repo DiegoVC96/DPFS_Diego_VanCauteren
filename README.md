@@ -111,3 +111,28 @@ Progreso de la migración de maquetas estáticas a un entorno funcional con **No
 - ✅ **Finalizado:** Funcionalidad probada y operativa.
 - 🏗️ **En curso:** Siguiente fase de robustez técnica.
 - 📅 **Pendiente:** Planificado para asegurar la seguridad del sitio.
+
+---
+
+## 📋 Tablero de Trabajo (Sprint Backlog) - Fase 4: Autenticación y Seguridad
+
+¡Hito alcanzado! El sistema ahora cuenta con un flujo de usuarios seguro y profesional.
+
+
+| Tarea | Estado | Responsable | Prioridad |
+| :--- | :---: | :---: | :---: |
+| Estructura MVC de Usuarios (Rutas y Controlador) | ✅ Finalizado | Backend | Alta |
+| Encriptación de contraseñas con **bcryptjs** | ✅ Finalizado | Backend | Alta |
+| Gestión de sesiones con **express-session** | ✅ Finalizado | Backend | Alta |
+| Implementación de **Cookies** (Función Recordarme) | ✅ Finalizado | Backend | Media |
+| Middleware de aplicación para persistencia de login | ✅ Finalizado | Backend | Media |
+| Middlewares de ruta (**Guest** y **Auth**) | ✅ Finalizado | Backend | Alta |
+| Header Dinámico mediante `res.locals` | ✅ Finalizado | Frontend | Media |
+| Lógica de Logout y limpieza de cookies | ✅ Finalizado | Backend | Baja |
+| Migración de JSON a **MySQL / Sequelize** | 📅 Pendiente | Full Stack | Alta |
+| Validación de formularios con **Express Validator** | 📅 Pendiente | Backend | Alta |
+
+**Leyenda:**
+- ✅ **Finalizado:** Funcionalidad implementada y testeada.
+- 🏗️ **En curso:** Tarea en proceso de desarrollo activo.
+- 📅 **Pendiente:** Tareas planificadas para el próximo Sprint.

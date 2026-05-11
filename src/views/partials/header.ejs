@@ -15,11 +15,14 @@
                 <input type="text" placeholder="Buscar hardware..." class="search-bar">
             </div>
             <div class="nav-actions">
-                <a href="#" class="nav-link">Login</a>
-                <div class="cart-icon">
-                    <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-                    <span class="cart-badge">3</span>
-                </div>
+            <% if (locals.user) { %>
+                <span class="neon-text">Hola, <%= user.firstName %></span>
+                <img src="/images/users/<%= user.image %>" width="30" style="border-radius: 50%">
+                <a href="/users/logout" class="nav-link">Cerrar Sesión</a>
+            <% } else { %>
+                <a href="/users/login" class="nav-link">Login</a>
+                <a href="/users/register" class="nav-link">Registro</a>
+            <% } %>
             </div>
         </nav>
     </header>

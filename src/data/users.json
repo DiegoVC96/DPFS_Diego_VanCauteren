@@ -1,29 +1,37 @@
 [
-  {
-    "id": 1,
-    "firstName": "Admin",
-    "lastName": "NeoHorizon",
-    "email": "admin@neohorizon.com",
-    "password": "admin123_password",
-    "category": "admin",
-    "image": "admin-profile.jpg"
-  },
-  {
-    "id": 2,
-    "firstName": "Franco",
-    "lastName": "Venture",
-    "email": "franco.v@gmail.com",
-    "password": "user1234",
-    "category": "customer",
-    "image": "user-franco.jpg"
-  },
-  {
-    "id": 3,
-    "firstName": "Lucía",
-    "lastName": "Gamer",
-    "email": "lucia_gaming@outlook.com",
-    "password": "secure_pass_99",
-    "category": "customer",
-    "image": "user-lucia.jpg"
-  }
+ {
+  "id": 1,
+  "firstName": "Admin",
+  "lastName": "NeoHorizon",
+  "email": "admin@neohorizon.com",
+  "password": "admin123_password",
+  "category": "admin",
+  "image": "admin-profile.jpg"
+ },
+ {
+  "id": 2,
+  "firstName": "Franco",
+  "lastName": "Venture",
+  "email": "franco.v@gmail.com",
+  "password": "user1234",
+  "category": "customer",
+  "image": "user-franco.jpg"
+ },
+ {
+  "id": 3,
+  "firstName": "Lucía",
+  "lastName": "Gamer",
+  "email": "lucia_gaming@outlook.com",
+  "password": "secure_pass_99",
+  "category": "customer",
+  "image": "user-lucia.jpg"
+ },
+ {
+  "id": 4,
+  "name": "Diego Van Cauteren",
+  "email": "apocaarg@gmail.com",
+  "password": "$2b$10$Px8tFrPTIYB0EkV/yQKYWuja6.rG1tmhOeSr2RtwzckGvTwRyHHwK",
+  "category": "customer",
+  "image": "default-avatar.png"
+ }
 ]
