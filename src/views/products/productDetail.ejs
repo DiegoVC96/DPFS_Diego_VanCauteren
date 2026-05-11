@@ -56,11 +56,6 @@
             <% } %>
 
             <div class="purchase-section">
-                <div class="quantity-selector">
-                    <button type="button" onclick="updateQty(-1)">-</button>
-                    <input type="number" value="1" id="qty" readonly>
-                    <button type="button" onclick="updateQty(1)">+</button>
-                </div>
                 <form action="/products/cart/add/<%= product.id %>" method="POST">
                     <div class="purchase-section">
                         <div class="quantity-selector">

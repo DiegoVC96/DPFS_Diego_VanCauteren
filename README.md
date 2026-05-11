@@ -143,6 +143,7 @@ Progreso de la migración de maquetas estáticas a un entorno funcional con **No
 
 ¡Hito técnico alcanzado! La aplicación ahora opera sobre una base de datos relacional robusta.
 
+
 | Tarea | Estado | Responsable | Prioridad |
 | :--- | :---: | :---: | :---: |
 | Diseño del Diagrama Entidad-Relación (DER) | ✅ Finalizado | Data Architect | Alta
@@ -161,3 +162,29 @@ Progreso de la migración de maquetas estáticas a un entorno funcional con **No
 ✅ **Finalizado:** Funcionalidad integrada en base de datos.
 🏗️ **En curso:** Tarea en proceso de desarrollo activo.
 📅 **Pendiente:** Planificado para el cierre del Sprint.
+
+---
+
+## 📋 Tablero de Trabajo (Sprint Backlog) - Fase 6: Validaciones y UX
+
+¡Hito alcanzado! El sitio ahora cuenta con una doble capa de seguridad y feedback inmediato para el usuario.
+
+
+
+| Tarea | Estado | Responsable | Prioridad |
+| :--- | :---: | :---: | :---: |
+| Instalación y configuración de **Express Validator** | ✅ Finalizado | Backend | Alta |
+| Validaciones de Back-end para Registro y Login | ✅ Finalizado | Backend | Alta |
+| Validaciones de Back-end para Creación y Edición | ✅ Finalizado | Backend | Alta |
+| Persistencia de datos mediante `oldData` en formularios | ✅ Finalizado | Backend | Media |
+| Validaciones de Front-end (JS) para Registro (min 2 carac.) | ✅ Finalizado | Frontend | Alta |
+| Validaciones de Front-end (JS) para Productos (min 5 carac.) | ✅ Finalizado | Frontend | Alta |
+| Validación de extensiones de archivos (Imágenes) | ✅ Finalizado | Frontend | Media |
+| Feedback visual de errores en tiempo real | ✅ Finalizado | UI Design | Media |
+| Desarrollo de **APIs (JSON)** para productos y usuarios | 🏗️ En curso | Full Stack | Alta |
+| Integración de **React** para el Dashboard | 📅 Pendiente | Full Stack | Alta |
+
+**Leyenda:**
+- ✅ **Finalizado:** Funcionalidad validada en ambos lados (Client/Server).
+- 🏗️ **En curso:** Tarea en proceso de desarrollo activo.
+- 📅 **Pendiente:** Planificado para el cierre del Sprint final.

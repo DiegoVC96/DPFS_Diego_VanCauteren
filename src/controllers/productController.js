@@ -1,5 +1,6 @@
 const db = require('../database/models');
 const { Op } = require('sequelize');
+const { validationResult } = require('express-validator');
 
 const productController = {
     // LISTAR 
@@ -57,6 +58,19 @@ const productController = {
 
     // GUARDAR
     store: async (req, res) => {
+        const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+        const categories = await db.ProductCategory.findAll();
+        const brands = await db.Brand.findAll();
+        return res.render('products/productForm', {
+            errors: errors.mapped(),
+            oldData: req.body,
+            categories,
+            brands,
+            product: {} 
+        });
+    }
     try {
         await db.Product.create({
             name: req.body.name,

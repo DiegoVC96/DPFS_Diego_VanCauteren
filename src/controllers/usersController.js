@@ -1,5 +1,6 @@
 const db = require('../database/models');
 const bcryptjs = require('bcryptjs');
+const { validationResult } = require('express-validator');
 
 const userController = {
     // 1. FORMULARIO DE LOGIN 
@@ -10,29 +11,35 @@ const userController = {
     // 2. LOGIN 
     loginProcess: async (req, res) => {
     try {
-        console.log("--- INTENTO DE LOGIN ---");
-        console.log("Email recibido:", req.body.email);
 
-        // 1. Buscar al usuario
+        const resultValidation = validationResult(req);
+
+        // Validar errores de FORMATO 
+        if (!resultValidation.isEmpty()) {
+            return res.render('users/login', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        }
+
         const userToLogin = await db.User.findOne({ 
             where: { email: req.body.email } 
         });
 
         if (!userToLogin) {
-            console.log("--- USUARIO NO ENCONTRADO EN LA DB ---");
             return res.render('users/login', {
                 errors: { email: { msg: 'Este email no está registrado' } }
             });
         }
 
-        // 2. Validar contraseña
         console.log("Validando contraseña...");
+        console.log("Password ingresado:", req.body.password);
+        console.log("Hash en base de datos:", userToLogin.password);
         const isPasswordCorrect = bcryptjs.compareSync(req.body.password, userToLogin.password);
+        console.log("¿Es correcta?:", isPasswordCorrect);
 
         if (isPasswordCorrect) {
-            console.log("--- LOGIN EXITOSO ---");
             
-            // Guardar en sesión (sin el password)
             const user = userToLogin.get({ plain: true });
             delete user.password;
             req.session.userLogged = user;
@@ -42,18 +49,15 @@ const userController = {
                 res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 });
             }
 
-            // REDIRECCIÓN MANUAL (Aseguramos que el flujo termine acá)
+            // REDIRECCIÓN MANUAL
             return res.redirect('/'); 
         } else {
-            console.log("--- CONTRASEÑA INCORRECTA ---");
             return res.render('users/login', {
                 errors: { password: { msg: 'La contraseña es incorrecta' } }
             });
         }
 
         } catch (error) {
-            console.log("--- ERROR CRÍTICO EN EL CONTROLADOR ---");
-            console.log(error);
             return res.send(error);
         }
     },
@@ -66,38 +70,39 @@ const userController = {
 
     // 4. REGISTRO
     processRegister: async (req, res) => {
-        try {
-        // 1. VERIFICACION
-        const userExists = await db.User.findOne({ where: { email: req.body.email } });
-        if (userExists) {
-            return res.render('users/register', {
-                errors: { email: { msg: 'Este email ya está registrado' } },
+    try {
+        const resultValidation = validationResult(req);
+
+        if (!resultValidation.isEmpty()) {
+            console.log("DETENIENDO REGISTRO: Hay errores de validación");
+            return res.render('users/register', { 
+                errors: resultValidation.mapped(),
                 oldData: req.body
             });
         }
 
-        // 2. CREAR
+        console.log("PROCEDIENDO A CREAR USUARIO...");
         const newUser = await db.User.create({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
             password: bcryptjs.hashSync(req.body.password, 10),
-            category_id: 2,
+            category_id: 2, 
             image: req.file ? req.file.filename : 'default-avatar.png'
         });
 
-        // 3. AUTO-LOGIN
         const userToSession = newUser.get({ plain: true });
         delete userToSession.password;
         req.session.userLogged = userToSession;
 
-        // 4. REDIRECCIÓN AL INICIO
         return res.redirect('/'); 
 
         } catch (error) {
+            console.log("ERROR EN DB:", error);
             res.send(error);
         }
     },
+
 
 
     // 5. PERFIL

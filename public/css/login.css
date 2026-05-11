@@ -56,7 +56,23 @@
     box-shadow: 0 0 10px rgba(0, 212, 255, 0.15);
 }
 
-/* Opciones Sociales */
+.error-msg-container {
+    background: rgba(255, 75, 43, 0.1);
+    border: 1px solid #ff4b2b;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.error-msg-neon {
+    color: #ff4b2b;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px rgba(255, 75, 43, 0.5);
+}
+
 .divider-text {
     text-align: center;
     font-size: 0.6rem;

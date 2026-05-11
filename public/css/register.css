@@ -80,6 +80,28 @@
     margin: 25px 0;
 }
 
+.is-invalid {
+    border-color: #ff4b2b !important;
+    box-shadow: 0 0 8px rgba(255, 75, 43, 0.3) !important;
+}
+
+.error-msg-neon {
+    color: #ff4b2b;
+    font-size: 0.7rem;
+    margin-top: 5px;
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    animation: pulseError 1.5s infinite;
+}
+
+@keyframes pulseError {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
 .checkbox-container {
     display: flex;
     align-items: center;

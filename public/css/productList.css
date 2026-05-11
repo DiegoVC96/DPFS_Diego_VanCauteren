@@ -73,31 +73,28 @@
     font-weight: bold;
 }
 
-.actions-cell {
-    display: flex;
-    gap: 15px;
-}
-
-.btn-edit, .btn-delete {
-    background: none;
-    border: 1px solid var(--border-color);
-    padding: 8px;
-    border-radius: 6px;
-    cursor: pointer;
-    color: var(--text-muted);
+.actions-cell svg {
     transition: 0.3s;
+    vertical-align: middle;
 }
 
-.btn-edit:hover {
-    border-color: var(--neon-blue);
-    color: var(--neon-blue);
-    background: rgba(0, 212, 255, 0.05);
+.btn-edit svg { color: var(--neon-blue); }
+.btn-delete svg { color: #ff4b2b; }
+
+.btn-edit:hover svg {
+    filter: drop-shadow(0 0 5px var(--neon-blue));
+    transform: scale(1.1);
 }
 
-.btn-delete:hover {
-    border-color: #ff4d4d;
-    color: #ff4d4d;
-    background: rgba(255, 77, 77, 0.05);
+.btn-delete:hover svg {
+    filter: drop-shadow(0 0 5px #ff4b2b);
+    transform: scale(1.1);
+}
+
+.btn-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-add-cart {
