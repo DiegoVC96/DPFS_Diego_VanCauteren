@@ -1,0 +1,20 @@
+:root {
+    --bg-primary: #0D1117;
+    --bg-secondary: #161B22;
+    --neon-blue: #00D4FF;
+    --border-color: #30363D;
+    --text-main: #E6EDF3;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Contenedor principal ocupa todo el ancho */
+.dashboard-wrapper {
+    padding: 40px;
+    min-height: 100vh;
+}

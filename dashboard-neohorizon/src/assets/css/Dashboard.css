@@ -1,0 +1,93 @@
+.btn-delete-red {
+    background: transparent;
+    color: #ff4b2b;
+    border: 1px solid #ff4b2b;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-delete-red:hover {
+    background: #ff4b2b;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 75, 43, 0.5);
+}
+
+.edit-form-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 2000;
+}
+
+.edit-form {
+    background: var(--bg-secondary);
+    padding: 30px;
+    border: 1px solid var(--neon-blue);
+    border-radius: 15px;
+    width: 400px;
+}
+
+.edit-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px;
+    background: #0d1117;
+    color: white;
+    border: 1px solid #30363d;
+}
+
+.dashboard-textarea {
+    width: 100%;
+    background: #0d1117;
+    color: white;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+    height: 80px;
+    resize: none;
+}
+
+.btn-add {
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+.card-simple {
+    background: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid var(--border-color); 
+    transition: 0.3s ease;
+    flex: 1;
+    min-width: 200px;
+}
+
+.card-simple:hover {
+    transform: translateY(-5px);
+}
+
+.border-blue { border-left-color: #00D4FF; box-shadow: 0 0 15px rgba(0, 212, 255, 0.1); }
+.border-green { border-left-color: #2EB872; box-shadow: 0 0 15px rgba(46, 184, 114, 0.1); }
+.border-purple { border-left-color: #A066FF; box-shadow: 0 0 15px rgba(160, 102, 255, 0.1); }
+
+.text-blue { color: #00D4FF; }
+.text-green { color: #2EB872; }
+.text-purple { color: #A066FF; }
+
+.icon-neon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.total-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    font-family: var(--font-tech);
+}
+
