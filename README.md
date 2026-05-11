@@ -39,27 +39,30 @@ Una de las tiendas más importantes con un enfoque 100% especializado en hardwar
 4. Gaming City (Argentina - Especialista Local)
 Una de las cadenas con mayor crecimiento en el nicho gaming del país, con múltiples sucursales físicas y una fuerte presencia online. Han logrado un equilibrio entre la venta minorista y el armado de equipos profesionales. Su catálogo está muy bien segmentado por "Intereses" (Gaming, Streaming, Oficina), lo cual ayuda a definir las rutas y categorías en React de forma lógica.
 5. Maximus Gaming Hardware
-Es uno de los jugadores más fuertes en el nicho de componentes específicos y periféricos de alta gama en Argentina. Se destaca por tener una de las interfaces de "Armado de PC" más fluidas y rápidas de la región. Su UX permite filtrar componentes compatibles de forma instantánea, lo cual es un excelente caso de uso para demostrar la eficiencia de los estados en React. Además, suelen ofrecer opciones de financiación competitivas que podés integrar como lógica en tu checkout.
+Es uno de los jugadores más fuertes en el nicho de componentes específicos y periféricos de alta gama en Argentina. Se destaca por tener una de las interfaces de "Armado de PC" más fluidas y rápidas de la región. Su UX permite filtrar componentes compatibles de forma instantánea, lo cual es un excelente caso de uso para demostrar la eficiencia de los estados en React. Además, suelen ofrecer opciones de financiación competitivas que podemos integrar como lógica en tu checkout.
 ---
 
-📋 Tablero de Trabajo (Sprint Backlog)
+## 📋 Tablero de Trabajo  - 
+
 Estado actual del desarrollo de la prueba de concepto para NeoHorizon Tech.
 
-Tarea	Estado	Responsable	Prioridad
-Definición de temática y público objetivo	✅ Finalizado	UX Lead	Alta
-Diseño de identidad visual (Logo y Colores)	✅ Finalizado	UI Design	Alta
-Maquetación Home Page (HTML/CSS)	✅ Finalizado	Frontend	Media
-Maquetación Detalle de Producto y Galería	✅ Finalizado	Frontend	Alta
-Implementación de Carrito de Compras	✅ Finalizado	Frontend	Alta
-Estructura de Login y Registro	✅ Finalizado	Frontend	Media
-Configuración de entorno Node.js / Express	🏗️ En curso	Backend	Alta
-Creación de modelos de datos (MongoDB)	🏗️ En curso	Backend	Alta
-Migración de Maquetas a Componentes React	📅 Pendiente	Frontend	Alta
-Integración de pasarela de pago (Mock)	📅 Pendiente	Full Stack	Baja
-Leyenda:
-✅ Finalizado: Tarea completada y validada.
-🏗️ En curso: Tarea en proceso de desarrollo técnico.
-📅 Pendiente: Tarea planificada para el próximo Sprint.
+| Tarea | Estado | Responsable | Prioridad |
+| :--- | :---: | :---: | :---: |
+| Definición de temática y público objetivo | ✅ Finalizado | UX Lead | Alta
+| Diseño de identidad visual (Logo y Colores) | ✅ Finalizado | UI Design | Alta
+| Maquetación Home Page (HTML/CSS) | ✅ Finalizado |	Frontend | Media
+| Maquetación Detalle de Producto y Galería | ✅ Finalizado | Frontend | Alta
+| Implementación de Carrito de Compras | ✅ Finalizado |	Frontend | Alta
+| Estructura de Login y Registro | ✅ Finalizado | Frontend | Media
+| Configuración de entorno Node.js / Express | 🏗️ En curso | Backend | Alta
+| Creación de modelos de datos (MongoDB) | 🏗️ En curso | Backend | Alta
+| Migración de Maquetas a Componentes React | 📅 Pendiente | Frontend | Alta
+| Integración de pasarela de pago (Mock) | 📅 Pendiente | Full Stack | Baja
+
+**Leyenda:**
+- ✅ **Finalizado:** Tarea completada y validada.
+- 🏗️ **En curso:** Tarea en proceso de desarrollo técnico.
+- 📅 **Pendiente:** Tarea planificada para el próximo Sprint.
 
 ---
 
@@ -159,9 +162,9 @@ Progreso de la migración de maquetas estáticas a un entorno funcional con **No
 | Desarrollo de APIs (JSON) para productos y usuarios |	📅 Pendiente | Full Stack |	Alta
 
 **Leyenda:**
-✅ **Finalizado:** Funcionalidad integrada en base de datos.
-🏗️ **En curso:** Tarea en proceso de desarrollo activo.
-📅 **Pendiente:** Planificado para el cierre del Sprint.
+- ✅ **Finalizado:** Funcionalidad integrada en base de datos.
+- 🏗️ **En curso:** Tarea en proceso de desarrollo activo.
+- 📅 **Pendiente:** Planificado para el cierre del Sprint.
 
 ---
 
