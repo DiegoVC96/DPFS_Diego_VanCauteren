@@ -15,7 +15,7 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     const config = {
-        tableName: 'user_categories', // O 'roles' según tu DB
+        tableName: 'user_categories', 
         timestamps: false
     };
 

@@ -1,10 +1,9 @@
-/* ESTRUCTURA PRINCIPAL */
 .cart-wrapper {
     display: flex;
     gap: 40px;
     margin-top: 40px;
     align-items: flex-start;
-    flex-wrap: wrap; /* Permite que las recomendaciones bajen al 100% de ancho */
+    flex-wrap: wrap; 
 }
 
 .cart-items-section {
@@ -172,7 +171,7 @@
 
 /* RECOMENDACIONES (ABAJO) */
 .related-products-section {
-    flex-basis: 100%; /* Fuerza a ocupar todo el ancho debajo */
+    flex-basis: 100%; 
     margin-top: 60px;
     padding-top: 40px;
     border-top: 1px solid var(--border-color);
@@ -265,7 +264,6 @@
     color: black;
 }
 
-/* RESPONSIVO */
 @media (max-width: 950px) {
     .cart-wrapper {
         flex-direction: column;

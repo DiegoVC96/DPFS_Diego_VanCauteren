@@ -7,7 +7,7 @@ INSERT INTO product_categories (name) VALUES
 
 INSERT INTO brands (name) VALUES
 
--- 2. Poblar Usuarios (Passwords encriptados de prueba: '123456')
+-- 2. Poblar Usuarios
 INSERT INTO users (firstName, lastName, email, password, image, category_id) VALUES 
 
 -- 3. Poblar Productos

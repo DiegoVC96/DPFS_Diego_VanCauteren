@@ -65,7 +65,7 @@ ul { list-style: none; }
 .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('/images/hero-hardware.jpg'); /* Asegurate que exista */
+    background-image: url('/images/hero-hardware.jpg');
     background-size: cover;
     background-position: center;
     filter: blur(4px);

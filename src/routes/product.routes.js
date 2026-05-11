@@ -14,12 +14,12 @@ const upload = multer({ storage });
 
 // DEFINICIÓN DE RUTAS
 
-// --- RUTAS DE CARRITO (Primero) ---
+// --- RUTAS DE CARRITO ---
 router.get('/cart', productController.cart);
 router.post('/cart/add/:id', productController.addToCart);
 router.post('/cart/remove/:index', productController.cartRemove);
 
-// --- RUTAS DE PRODUCTO (Después) ---
+// --- RUTAS DE PRODUCTO ---
 router.get('/', productController.index);               
 router.get('/create', productController.create); 
 router.get('/search', productController.search);       

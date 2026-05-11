@@ -139,13 +139,13 @@ const productController = {
     try {
         const cart = req.session.cart || [];
         
-        // Buscamos 3 productos para la sección "Podría interesarte"
+        // 3 productos para la sección "Podría interesarte"
         const relatedProducts = await db.Product.findAll({ 
             limit: 3,
             include: ['brand'] 
         });
 
-        // ENVIAMOS AMBAS VARIABLES A LA VISTA
+        // VARIABLES A LA VISTA
         res.render('products/productCart', { cart, relatedProducts });
         
         } catch (error) {
@@ -209,7 +209,7 @@ const productController = {
             include: ['category', 'brand']
         });
 
-        // Pasamos los productos y las keywords a la vista
+        // Productos y keywords a la vista
         res.render('products/productList', { products, keywords });
     } catch (error) {
         res.send(error);

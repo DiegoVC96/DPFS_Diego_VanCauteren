@@ -4,12 +4,14 @@ const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const cors = require('cors'); 
 
 // 1. CONFIGURACIÓN DE VISTAS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './src/views'));
 
 // 2. MIDDLEWARES GLOBALES 
+app.use(cors()); 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -27,7 +29,6 @@ app.use(session({
 const userRecordameMiddleware = require('./src/middlewares/userRecordameMiddleware');
 app.use(userRecordameMiddleware); 
 
-// MIDDLEWARES
 app.use((req, res, next) => {
     res.locals.user = req.session.userLogged || null;
     next();
@@ -36,9 +37,13 @@ app.use((req, res, next) => {
 // 5. RUTAS
 const usersRouter = require('./src/routes/users');
 const productRoutes = require('./src/routes/product.routes');
+const usersApiRouter = require('./src/routes/api/usersApi.routes');
+const productsApiRouter = require('./src/routes/api/productsApi.routes');
 
 app.use('/users', usersRouter);
 app.use('/products', productRoutes);
+app.use('/api/users', usersApiRouter);
+app.use('/api/products', productsApiRouter);
 
 // HOME
 app.get('/', (req, res) => {
