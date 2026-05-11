@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Producto | NeoHorizon Tech</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/style.css"> 
+    <link rel="stylesheet" href="/public/css/productDetail.css"> 
+</head>
+<body>
+
+    <header class="header-main">
+        <nav class="container">
+            <div class="logo font-tech neon-text"><img src="/public/images/LOGO NeoHorizon.png"></div>
+            <div class="nav-actions">
+                <a href="index.html" class="nav-link">Volver al Inicio</a>
+                <div class="cart-icon">
+                    <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container product-detail-container animate-fade">
+        <section class="gallery-column">
+            <div class="main-image-box neon-border">
+            <img src="/public/images/products/Product4.png" id="mainImg" data-origin="gpu-principal.jpg" alt="Producto Principal">
+            </div>
+            <div class="thumbnails-row">
+            <img src="/public/images/products/Product4.png" class="thumb active" 
+             onmouseover="previewImage(this.src)" 
+             onmouseleave="restoreImage()" 
+             onclick="selectImage(this)">
+             
+            <img src="/public/images/products/Product3.png" class="thumb" 
+             onmouseover="previewImage(this.src)" 
+             onmouseleave="restoreImage()" 
+             onclick="selectImage(this)">
+             
+            <img src="/public/images/products/Product2.png" class="thumb" 
+             onmouseover="previewImage(this.src)" 
+             onmouseleave="restoreImage()" 
+             onclick="selectImage(this)">
+            </div>
+        </section>
+
+    <section class="product-info-panel">
+        <h1 class="font-tech">GIGABYTE RTX 4080 <span class="neon-text">SUPER</span></h1>
+        <p class="sku">GAMING OC - 16GB GDDR6X</p>
+        
+        <div class="price-section">
+            <span class="price-tag">$1.340.000</span>
+            <span class="stock-status">● Stock Disponible</span>
+        </div>
+
+        <hr class="divider">
+
+        <div class="variants-section">
+            <label class="font-tech">VERSIÓN</label>
+            <div class="variant-options">
+                <button class="variant-btn active">Gaming OC</button>
+                <button class="variant-btn">Windforce V2</button>
+                <button class="variant-btn">AERO (White)</button>
+            </div>
+        </div>
+
+        <div class="purchase-section">
+            <div class="quantity-selector">
+                <button onclick="updateQty(-1)">-</button>
+                <input type="number" value="1" id="qty" readonly>
+                <button onclick="updateQty(1)">+</button>
+            </div>
+            <button class="btn-primary btn-full">AÑADIR AL CARRITO</button>
+        </div>
+
+        <div class="product-description">
+            <h3 class="font-tech">ESPECIFICACIONES</h3>
+            <ul>
+                <li>Powered by NVIDIA DLSS 3</li>
+                <li>4th Generation Tensor Cores</li>
+                <li>WINDFORCE Cooling System</li>
+                <li>RGB Fusion & Protection Metal Back Plate</li>
+            </ul>
+        </div>
+        </section>
+        <section class="extra-info-container">
+        <!-- Especificaciones Técnicas -->
+        <div class="info-block animate-fade">
+            <h2 class="font-tech section-line">ESPECIFICACIONES TÉCNICAS</h2>
+            <table class="specs-table">
+                <tr>
+                    <td>Motor de Gráficos</td>
+                    <td>NVIDIA® GeForce RTX™ 4080 SUPER</td>
+                </tr>
+                <tr>
+                    <td>Bus Standard</td>
+                    <td>PCI Express 4.0</td>
+                </tr>
+                <tr>
+                    <td>Memoria de Video</td>
+                    <td>16GB GDDR6X</td>
+                </tr>
+                <tr>
+                    <td>Reloj del Motor</td>
+                    <td>2610 MHz (Core Clock)</td>
+                </tr>
+                <tr>
+                    <td>Núcleos CUDA</td>
+                    <td>10240</td>
+                </tr>
+                <tr>
+                    <td>Interfaz de Memoria</td>
+                    <td>256-bit</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Opiniones de Usuarios -->
+        <div class="info-block animate-fade">
+            <h2 class="font-tech section-line">OPINIONES DE USUARIOS</h2>
+            <div class="reviews-wrapper">
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="user-name">Franco M.</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <p>"Una bestia total. El rendimiento en 4K es increíble y las temperaturas no pasan los 65 grados."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="user-name">Lucía G.</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <p>"Excelente calidad de construcción. El diseño con luces LED es sutil y elegante."</p>
+                </div>
+            </div>
+        </div>
+        </section>
+    </main>
+
+
+    <script>
+    const mainImg = document.getElementById('mainImg');
+
+    function previewImage(src) {
+        mainImg.src = src;
+    }
+
+    function restoreImage() {
+        mainImg.src = mainImg.getAttribute('data-origin');
+    }
+
+    function selectImage(element) {
+        const src = element.src;
+        mainImg.src = src;
+        mainImg.setAttribute('data-origin', src); 
+        
+        const thumbs = document.querySelectorAll('.thumb');
+        thumbs.forEach(t => t.classList.remove('active'));
+        element.classList.add('active');
+    }
+    </script>
+
+    <footer class="footer-main">
+        <div class="container footer-grid">
+            <!-- Columna 1: Newsletter -->
+            <div class="footer-col">
+                <h4 class="font-tech neon-text">NEWSLETTER</h4>
+                <p>Recibí ofertas exclusivas y lanzamientos antes que nadie.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="tu@email.com" class="search-bar">
+                    <button type="submit" class="btn-primary">UNIRSE</button>
+                </form>
+            </div>
+
+            <!-- Columna 2: Links Legales -->
+            <div class="footer-col">
+                <h4 class="font-tech neon-text">INSTITUCIONAL</h4>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Políticas de Privacidad</a></li>
+                    <li><a href="#">Defensa del Consumidor</a></li>
+                    <li><a href="#">Botón de Arrepentimiento</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Redes Sociales -->
+            <div class="footer-col">
+                <h4 class="font-tech neon-text">SÍGUENOS</h4>
+                <div class="social-links">
+                    <!-- Instagram -->
+                    <a href="#" aria-label="Instagram">
+                        <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    </a>
+                    <!-- Twitter / X -->
+                    <a href="#" aria-label="X">
+                        <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16H20L8.267 4z"/><path d="M4 20l6.768-6.768m2.46-2.46L20 4"/></svg>
+                    </a>
+                    <!-- Discord -->
+                    <a href="#" aria-label="Discord">
+                        <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><path d="M7.5 7.1c2-.5 4-.5 6 0"/><path d="M7 15.6c1.5 1.4 3.5 1.4 5 0"/><path d="m5 7 1-1c2-1 4-1 6 0l1 1"/><path d="M15.5 17c1.1 0 2.1-.4 2.8-1.1l2.7-3.9c.5-.8.5-1.9 0-2.7l-2.7-3.9C17.6 4.4 16.6 4 15.5 4H8.5c-1.1 0-2.1.4-2.8 1.1L3 9c-.5.8-.5 1.9 0 2.7l2.7 3.9c.7.7 1.7 1.1 2.8 1.1h7z"/></svg>
+                    </a>
+                    <!-- YouTube -->
+                    <a href="#" aria-label="YouTube">
+                        <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 2-2h15a2 2 0 0 1 2 2 24.12 24.12 0 0 1 0 10 2 2 0 0 1-2 2h-15a2 2 0 0 1-2-2Z"/><path d="m10 15 5-3-5-3z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p class="font-tech">NEOHORIZON TECH &copy; 2026 - DH VENTURE CAPITALS CHALLENGE</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
