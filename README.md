@@ -85,3 +85,29 @@ Progreso de la migración de maquetas estáticas a un entorno funcional con **No
 - ✅ **Finalizado:** Tarea completada y validada en el servidor.
 - 🏗️ **En curso:** Tarea en proceso de codificación lógica.
 - 📅 **Pendiente:** Planificado para el cierre del Sprint.
+
+---
+
+## 📋 Tablero de Trabajo (Sprint Backlog) - Fase 3: Funcionalidad CRUD
+
+¡Objetivo alcanzado! El sistema ahora es capaz de gestionar el inventario de forma dinámica.
+
+
+
+| Tarea | Estado | Responsable | Prioridad |
+| :--- | :---: | :---: | :---: |
+| Estructura MVC y configuración de Express | ✅ Finalizado | Backend | Alta |
+| Maquetación de todas las vistas en EJS | ✅ Finalizado | Frontend | Alta |
+| Implementación de motor EJS y Partials | ✅ Finalizado | Full Stack | Alta |
+| Creación de base de datos local (JSON) | ✅ Finalizado | Backend | Alta |
+| Desarrollo de las 7 rutas de productos (CRUD) | ✅ Finalizado | Backend | Alta |
+| Configuración de **Multer** para subida de fotos | ✅ Finalizado | Backend | Media |
+| Integración de **Method-Override** (PUT/DELETE) | ✅ Finalizado | Backend | Media |
+| Lógica de persistencia en `productController` | ✅ Finalizado | Backend | Alta |
+| Validación de formularios (Back-end) | 🏗️ En curso | Backend | Alta |
+| Sistema de Sesiones y Cookies (Auth) | 📅 Pendiente | Backend | Alta |
+
+**Leyenda:**
+- ✅ **Finalizado:** Funcionalidad probada y operativa.
+- 🏗️ **En curso:** Siguiente fase de robustez técnica.
+- 📅 **Pendiente:** Planificado para asegurar la seguridad del sitio.

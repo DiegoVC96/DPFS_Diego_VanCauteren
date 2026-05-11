@@ -1,13 +1,17 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const methodOverride = require('method-override');
+const fs = require('fs');
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(methodOverride('_method')); 
 
 // Configuración de EJS
 app.set('views', path.join(__dirname, './src/views'));
 app.set('view engine', 'ejs');
-
 
 
 // TESTEO
@@ -32,11 +36,25 @@ app.get('/productsDetail', (req, res) => {
 });
 
 app.get('/productsForm', (req, res) => {
-    res.render('products/productForm'); 
+    res.render('products/productForm', { product: {} }); 
 });
 
 app.get('/productsList', (req, res) => {
-    res.render('products/productList'); 
+    const productsFilePath = path.join(__dirname, 'src/data/products.json');
+    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    
+    res.render('products/productList', { products: products });
+});
+
+const productRoutes = require('./src/routes/product.routes');
+app.use('/products', productRoutes);
+
+app.get('/products', (req, res) => {
+
+    const productsFilePath = path.join(__dirname, 'src/data/products.json');
+    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+    res.render('products/productList', { products: products }); 
 });
 
 

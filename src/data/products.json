@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "GIGABYTE RTX 4080 SUPER",
+    "description": "Experimenta el trazado de rayos ultra rápido y el rendimiento potenciado por IA con la arquitectura Ada Lovelace. Perfecta para creadores y gamers.",
+    "image": "gpu-principal.jpg",
+    "thumbnails": ["gpu-side.jpg", "gpu-back.jpg"],
+    "category": "gpus",
+    "variants": ["Gaming OC", "Windforce V2"],
+    "price": 1340000,
+    "stock": true,
+    "specs": {
+      "Motor": "NVIDIA GeForce RTX 4080 SUPER",
+      "Memoria": "16GB GDDR6X",
+      "Interfaz": "256-bit",
+      "Bus": "PCI Express 4.0"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Intel Core i9-14900K",
+    "description": "Procesador de 14va generación con 24 núcleos y 32 hilos. Frecuencia turbo de hasta 6.0 GHz.",
+    "image": "cpu-i9.jpg",
+    "thumbnails": ["cpu-box.jpg"],
+    "category": "cpus",
+    "variants": ["Box", "Tray"],
+    "price": 850000,
+    "stock": true,
+    "specs": {
+      "Socket": "LGA1700",
+      "Núcleos": "24",
+      "Hilos": "32",
+      "Frecuencia": "6.0 GHz"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Teclado Mecánico Razer Huntsman",
+    "description": "Interruptores ópticos lineales Razer, retroiluminación Chroma RGB y teclas de PBT de doble inyección.",
+    "image": "keyboard-razer.jpg",
+    "thumbnails": ["keyboard-2.jpg"],
+    "category": "peripherals",
+    "variants": ["Black", "Mercury White"],
+    "price": 950000,
+    "stock": false,
+    "specs": {
+      "Tipo": "Mecánico Óptico",
+      "RGB": "Sí",
+      "Conectividad": "USB-C"
+    }
+  }
+]

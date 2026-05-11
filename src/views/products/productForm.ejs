@@ -10,8 +10,10 @@
             <p>Panel de Control de Inventario</p>
         </header>
 
-        <form action="/products/<%= (typeof product != 'undefined') ? product.id + '?_method=PUT' : 'create' %>" 
-              method="POST" enctype="multipart/form-data" class="admin-form">
+        <form action="/products/<%= (locals.product && product.id) ? product.id + '?_method=PUT' : '' %>" 
+                            method="POST" 
+                            enctype="multipart/form-data" 
+                            class="admin-form">
             
             <div class="form-grid">
                 <div class="form-col">
